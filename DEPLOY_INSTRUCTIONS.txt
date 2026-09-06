@@ -1,0 +1,20 @@
+TRAINING SYSTEM ONLINE — DEPLOY READY
+
+Це копія твоєї робочої v4.7. Локальну версію не змінює.
+
+ЛОКАЛЬНО:
+1. python -m pip install -r requirements.txt
+2. python run_online.py
+3. http://127.0.0.1:5000
+
+ПУБЛІКАЦІЯ:
+- Створити GitHub repository і завантажити вміст цієї папки.
+- У Render створити Web Service з цим repository.
+- Build Command: pip install -r requirements.txt
+- Start Command: gunicorn --bind 0.0.0.0:$PORT training_web_v4_7:app
+- Після Deploy Render видасть HTTPS-адресу.
+
+ВАЖЛИВО:
+Ця збірка ще використовує існуючу Excel-логіку v4.7.
+Після першого online-запуску окремо переносимо запис результатів у
+керовану PostgreSQL, щоб результати не залежали від локального Excel.
